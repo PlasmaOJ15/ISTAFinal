@@ -9,6 +9,7 @@ extends CharacterBody2D
 @export var downClamp = 0
 const SPEED = 250.0
 var can_move = true
+var zoomLevel = 2
 
 func _ready() -> void:
 	camera.limit_left = leftClamp
@@ -19,6 +20,8 @@ func _ready() -> void:
 func _physics_process(_delta: float) -> void:
 	if Global.playerLocked != true:
 		move_state()
+	else:
+		player_sprite.play('idle')
 		
 func move_state():
 	var direction_x := Input.get_axis("left", "right")
@@ -46,6 +49,28 @@ func move_state():
 	else:
 		player_sprite.play('idle')
 	move_and_slide()
+
+func zoomIn():
+	if zoomLevel == 2:
+		zoomLevel = 1
+		camera.zoom = Vector2(2.0,2.0)
+	elif zoomLevel == 3:
+		zoomLevel = 2
+		camera.zoom = Vector2(1.0,1.0)
+	elif zoomLevel == 4:
+		zoomLevel = 3
+		camera.zoom = Vector2(0.5,0.5)
+
+func zoomOut():
+	if zoomLevel == 2:
+		zoomLevel = 3
+		camera.zoom = Vector2(0.5,0.5)
+	elif zoomLevel == 1:
+		zoomLevel = 2
+		camera.zoom = Vector2(1.0,1.0)
+	elif zoomLevel == 3:
+		zoomLevel = 4
+		camera.zoom = Vector2(0.3,0.3)
 
 func disable_movement(boolean):
 	can_move = boolean

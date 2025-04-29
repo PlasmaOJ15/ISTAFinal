@@ -131,3 +131,8 @@ offset_top = 190.0
 offset_right = 963.0
 offset_bottom = 595.0
 color = Color(0.862465, 0, 0.0655361, 1)
+
+[node name="teleportArea" parent="." instance=ExtResource("3_e6kyq")]
+position = Vector2(166, 277)
+sceneName = "res://Scenes/archives.tscn"
+roomName = "the Archives"
