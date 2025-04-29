@@ -1,0 +1,133 @@
+[gd_scene load_steps=8 format=3 uid="uid://45cd4c4ufjgx"]
+
+[ext_resource type="PackedScene" uid="uid://c3dwy5qviw2jy" path="res://Scenes/protag.tscn" id="1_1m3ku"]
+[ext_resource type="PackedScene" uid="uid://do2blqkigth53" path="res://Scenes/curator.tscn" id="2_21use"]
+[ext_resource type="PackedScene" uid="uid://boyd67x4sxpvm" path="res://Scenes/teleportArea.tscn" id="3_e6kyq"]
+[ext_resource type="Script" uid="uid://bfugvmetwsjyd" path="res://Scripts/barriers.gd" id="4_c4y5e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_21use"]
+size = Vector2(1943, 81)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e6kyq"]
+size = Vector2(92, 571)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c4y5e"]
+size = Vector2(76, 447)
+
+[node name="Gallery" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1779.0
+offset_bottom = 251.0
+color = Color(0.404875, 0.221641, 0.0477395, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+offset_left = 382.0
+offset_top = 34.0
+offset_right = 574.0
+offset_bottom = 177.0
+color = Color(0.187176, 0.187176, 0.187176, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_left = 667.0
+offset_right = 869.0
+offset_bottom = 253.0
+color = Color(0.0342483, 0, 0.502792, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="."]
+offset_left = 59.0
+offset_right = 261.0
+offset_bottom = 253.0
+color = Color(0.0956109, 0.0572149, 0.00120236, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="."]
+offset_left = 979.0
+offset_right = 1181.0
+offset_bottom = 253.0
+color = Color(0.0956109, 0.0572149, 0.00120236, 1)
+
+[node name="ColorRect6" type="ColorRect" parent="."]
+offset_left = 1219.0
+offset_right = 1421.0
+offset_bottom = 253.0
+color = Color(0.0956109, 0.0572149, 0.00120236, 1)
+
+[node name="ColorRect7" type="ColorRect" parent="."]
+offset_left = 1451.0
+offset_right = 1653.0
+offset_bottom = 253.0
+color = Color(0.0956109, 0.0572149, 0.00120236, 1)
+
+[node name="Curator" parent="." instance=ExtResource("2_21use")]
+position = Vector2(479, 157)
+scale = Vector2(0.148317, 0.148317)
+
+[node name="Protag" parent="." instance=ExtResource("1_1m3ku")]
+position = Vector2(558, 296)
+rightClamp = 1779
+downClamp = 572
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(826, 211)
+shape = SubResource("RectangleShape2D_21use")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(971.5, 612)
+shape = SubResource("RectangleShape2D_21use")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-44, 368)
+shape = SubResource("RectangleShape2D_e6kyq")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1825, 368)
+shape = SubResource("RectangleShape2D_e6kyq")
+
+[node name="teleports" type="Node2D" parent="."]
+position = Vector2(774, 276)
+
+[node name="experienceTele" parent="teleports" instance=ExtResource("3_e6kyq")]
+sceneName = "res://Scenes/Experience.tscn"
+roomName = "The Experience"
+
+[node name="Lucien" parent="teleports" instance=ExtResource("3_e6kyq")]
+position = Vector2(304, 4)
+sceneName = "res://Scenes/lucien.tscn"
+roomName = "Lucien's Room"
+
+[node name="Cami" parent="teleports" instance=ExtResource("3_e6kyq")]
+position = Vector2(543, 3)
+sceneName = "res://Scenes/cami.tscn"
+roomName = "Cami's Room"
+
+[node name="Lauren" parent="teleports" instance=ExtResource("3_e6kyq")]
+position = Vector2(777, 2)
+sceneName = "res://Scenes/lauren.tscn"
+roomName = "Lauren's Room"
+
+[node name="barriers" type="StaticBody2D" parent="."]
+script = ExtResource("4_c4y5e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="barriers"]
+position = Vector2(302, 377)
+shape = SubResource("RectangleShape2D_c4y5e")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="barriers"]
+position = Vector2(960, 373)
+shape = SubResource("RectangleShape2D_c4y5e")
+
+[node name="ColorRect" type="ColorRect" parent="barriers"]
+offset_left = 299.0
+offset_top = 190.0
+offset_right = 339.0
+offset_bottom = 595.0
+color = Color(0.862465, 0, 0.0655361, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="barriers"]
+offset_left = 923.0
+offset_top = 190.0
+offset_right = 963.0
+offset_bottom = 595.0
+color = Color(0.862465, 0, 0.0655361, 1)
