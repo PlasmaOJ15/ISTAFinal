@@ -22,6 +22,9 @@ func _physics_process(_delta: float) -> void:
 		move_state()
 	else:
 		player_sprite.play('idle')
+	if Input.is_action_just_pressed("DEBUG"):
+		Global.experienced = true
+		get_tree().change_scene_to_file("res://Scenes/gallery.tscn")
 		
 func move_state():
 	var direction_x := Input.get_axis("left", "right")

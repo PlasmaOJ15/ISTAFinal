@@ -1,8 +1,98 @@
-[gd_scene load_steps=2 format=3 uid="uid://d1wa183wq8vd1"]
+[gd_scene load_steps=13 format=3 uid="uid://d1wa183wq8vd1"]
 
 [ext_resource type="PackedScene" uid="uid://c3dwy5qviw2jy" path="res://Scenes/protag.tscn" id="1_i3nxv"]
+[ext_resource type="PackedScene" uid="uid://boyd67x4sxpvm" path="res://Scenes/teleportArea.tscn" id="2_j0ygw"]
+[ext_resource type="Texture2D" uid="uid://kxsbhbay65n0" path="res://Assets/selfrep/CamiSelfPortrait.jpg" id="3_sa7cy"]
+[ext_resource type="Texture2D" uid="uid://cm1007rfsqapc" path="res://Assets/selfrep/LucianSelfPortrait.jpg" id="4_tfukp"]
+[ext_resource type="Texture2D" uid="uid://cpbgrl1mnabrs" path="res://Assets/selfrep/OJ.png" id="5_dn1yi"]
+[ext_resource type="PackedScene" uid="uid://b1owguctad4gf" path="res://Scenes/storage.tscn" id="6_tfukp"]
+[ext_resource type="Texture2D" uid="uid://b20mdk3ws21y5" path="res://Assets/storage/CamiStorage.jpg" id="7_dn1yi"]
+[ext_resource type="Texture2D" uid="uid://dj13wlttvnvd8" path="res://Assets/storage/LucianStorage.jpg" id="8_i0fjg"]
+[ext_resource type="Texture2D" uid="uid://dnv88vaq8fk8j" path="res://Assets/storage/OJStorage.jpg" id="9_5a13m"]
+[ext_resource type="Texture2D" uid="uid://k7fnm0c66f3a" path="res://Assets/storage/LaurenStorage.jpg" id="10_m78w2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i3nxv"]
+size = Vector2(1177, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j0ygw"]
+size = Vector2(20, 664)
 
 [node name="archives" type="Node2D"]
 
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 232.0
+color = Color(0.210869, 0.10755, 0.0223952, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_left = 485.0
+offset_top = 609.0
+offset_right = 650.0
+offset_bottom = 673.0
+color = Color(0.210869, 0.10755, 0.0223952, 1)
+
 [node name="Protag" parent="." instance=ExtResource("1_i3nxv")]
-position = Vector2(475, 381)
+position = Vector2(576, 539)
+rightClamp = 1152
+downClamp = 648
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(578.5, 222)
+shape = SubResource("RectangleShape2D_i3nxv")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(578.5, 658)
+shape = SubResource("RectangleShape2D_i3nxv")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-10, 322)
+shape = SubResource("RectangleShape2D_j0ygw")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1162, 322)
+shape = SubResource("RectangleShape2D_j0ygw")
+
+[node name="teleportArea" parent="." instance=ExtResource("2_j0ygw")]
+position = Vector2(570, 652)
+
+[node name="CamiSelfPortrait" type="Sprite2D" parent="."]
+position = Vector2(127, 93)
+scale = Vector2(0.158864, 0.158864)
+texture = ExtResource("3_sa7cy")
+
+[node name="LucianSelfPortrait" type="Sprite2D" parent="."]
+position = Vector2(417, 96)
+scale = Vector2(0.100321, 0.100321)
+texture = ExtResource("4_tfukp")
+
+[node name="Oj" type="Sprite2D" parent="."]
+position = Vector2(724, 98)
+scale = Vector2(0.112305, 0.112305)
+texture = ExtResource("5_dn1yi")
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+offset_left = 894.0
+offset_top = 25.0
+offset_right = 1033.0
+offset_bottom = 171.0
+
+[node name="camiStorage" parent="." instance=ExtResource("6_tfukp")]
+position = Vector2(122, 238)
+resource = ExtResource("7_dn1yi")
+
+[node name="Storage" parent="." instance=ExtResource("6_tfukp")]
+position = Vector2(412, 241)
+resource = ExtResource("8_i0fjg")
+artistName = "Lucian"
+
+[node name="Storage2" parent="." instance=ExtResource("6_tfukp")]
+position = Vector2(718, 239)
+resource = ExtResource("9_5a13m")
+artistName = "OJ"
+
+[node name="Storage3" parent="." instance=ExtResource("6_tfukp")]
+position = Vector2(962, 238)
+resource = ExtResource("10_m78w2")
+artistName = "Lauren"

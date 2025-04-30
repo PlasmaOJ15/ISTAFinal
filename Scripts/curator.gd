@@ -9,9 +9,9 @@ var talking = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	head.play("idle")
-	body.play("idle")
-	hands.play("idle")
+	idle()
+	if Global.experienced:
+		label.text = "Welcome back. I hope you enjoyed the experience.\nTo the left you can find the archives, and to the right\nyou can see all the collages. Use + or - to zoom in or out"
 
 func talk():
 	head.play("talk")
@@ -22,6 +22,7 @@ func idle():
 	head.play("idle")
 	body.play("idle")
 	hands.play("idle")
+
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("interact") and canTalk and !talking:

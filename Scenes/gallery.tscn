@@ -95,7 +95,7 @@ roomName = "The Experience"
 [node name="Lucien" parent="teleports" instance=ExtResource("3_e6kyq")]
 position = Vector2(304, 4)
 sceneName = "res://Scenes/lucien.tscn"
-roomName = "Lucien's Room"
+roomName = "Lucian's Room"
 
 [node name="Cami" parent="teleports" instance=ExtResource("3_e6kyq")]
 position = Vector2(543, 3)
