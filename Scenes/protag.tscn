@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://c3dwy5qviw2jy"]
+[gd_scene load_steps=8 format=3 uid="uid://c3dwy5qviw2jy"]
 
 [ext_resource type="Script" uid="uid://deleteb8agxbo" path="res://Scripts/protag.gd" id="1_i64gl"]
+[ext_resource type="Texture2D" uid="uid://b60xxxkvkvlxb" path="res://Assets/protag/shadows.png" id="2_dmom6"]
 [ext_resource type="Texture2D" uid="uid://bd0t34ytqo5xi" path="res://Assets/protag/base.png" id="2_owjky"]
 [ext_resource type="Texture2D" uid="uid://b6d6tcp4hdtjb" path="res://Assets/protag/walk1.png" id="3_dmom6"]
 [ext_resource type="Texture2D" uid="uid://dr74eeujemaco" path="res://Assets/protag/walk2.png" id="4_ynv66"]
@@ -41,6 +42,14 @@ downClamp = 9999
 [node name="Camera" type="Camera2D" parent="."]
 limit_left = 0
 limit_top = 0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Camera"]
+
+[node name="shadow" type="Sprite2D" parent="Camera/CanvasLayer"]
+visible = false
+position = Vector2(576, 324)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("2_dmom6")
 
 [node name="playerSprite" type="AnimatedSprite2D" parent="."]
 position = Vector2(4, 27)

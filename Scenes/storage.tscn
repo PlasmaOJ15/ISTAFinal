@@ -1,7 +1,28 @@
-[gd_scene load_steps=5 format=3 uid="uid://b1owguctad4gf"]
+[gd_scene load_steps=8 format=3 uid="uid://b1owguctad4gf"]
 
 [ext_resource type="Script" uid="uid://bgbkhuf6un4c8" path="res://Scripts/storage.gd" id="1_kgl67"]
 [ext_resource type="Texture2D" uid="uid://b20mdk3ws21y5" path="res://Assets/storage/CamiStorage.jpg" id="2_j3ewu"]
+[ext_resource type="Texture2D" uid="uid://ved4plqvrjhg" path="res://Assets/background/chest.png" id="3_5mkhg"]
+[ext_resource type="Texture2D" uid="uid://gnigtl7nl3w4" path="res://Assets/background/chestopen.png" id="4_l1ebc"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_l31li"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_5mkhg")
+}],
+"loop": true,
+"name": &"closed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_l1ebc")
+}],
+"loop": true,
+"name": &"open",
+"speed": 5.0
+}]
 
 [sub_resource type="LabelSettings" id="LabelSettings_j3ewu"]
 font_size = 26
@@ -14,11 +35,17 @@ size = Vector2(60, 30)
 [node name="Storage" type="Area2D"]
 script = ExtResource("1_kgl67")
 
+[node name="chest" type="AnimatedSprite2D" parent="."]
+position = Vector2(3.8147e-06, -47)
+scale = Vector2(0.65, 0.65)
+sprite_frames = SubResource("SpriteFrames_l31li")
+animation = &"closed"
+
 [node name="Label" type="Label" parent="."]
 visible = false
-offset_left = -92.0
+offset_left = -106.0
 offset_top = -60.0
-offset_right = 166.0
+offset_right = 152.0
 offset_bottom = -24.0
 text = "View Cami's Images?"
 label_settings = SubResource("LabelSettings_j3ewu")

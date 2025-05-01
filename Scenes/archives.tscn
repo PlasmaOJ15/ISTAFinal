@@ -1,15 +1,21 @@
-[gd_scene load_steps=13 format=3 uid="uid://d1wa183wq8vd1"]
+[gd_scene load_steps=19 format=3 uid="uid://d1wa183wq8vd1"]
 
+[ext_resource type="Texture2D" uid="uid://b1kxraiqd8e88" path="res://Assets/background/floors.png" id="1_fp7ht"]
 [ext_resource type="PackedScene" uid="uid://c3dwy5qviw2jy" path="res://Scenes/protag.tscn" id="1_i3nxv"]
+[ext_resource type="Texture2D" uid="uid://csk5w2wycw5ym" path="res://Assets/background/wall.png" id="1_lqwkw"]
+[ext_resource type="Texture2D" uid="uid://b45eo5myer3x3" path="res://Assets/background/portrait.png" id="2_evwwu"]
 [ext_resource type="PackedScene" uid="uid://boyd67x4sxpvm" path="res://Scenes/teleportArea.tscn" id="2_j0ygw"]
 [ext_resource type="Texture2D" uid="uid://kxsbhbay65n0" path="res://Assets/selfrep/CamiSelfPortrait.jpg" id="3_sa7cy"]
 [ext_resource type="Texture2D" uid="uid://cm1007rfsqapc" path="res://Assets/selfrep/LucianSelfPortrait.jpg" id="4_tfukp"]
 [ext_resource type="Texture2D" uid="uid://cpbgrl1mnabrs" path="res://Assets/selfrep/OJ.png" id="5_dn1yi"]
 [ext_resource type="PackedScene" uid="uid://b1owguctad4gf" path="res://Scenes/storage.tscn" id="6_tfukp"]
+[ext_resource type="Texture2D" uid="uid://blhlgd5jaip85" path="res://Assets/selfrep/laurenPortrait.jpg" id="6_unfvu"]
 [ext_resource type="Texture2D" uid="uid://b20mdk3ws21y5" path="res://Assets/storage/CamiStorage.jpg" id="7_dn1yi"]
+[ext_resource type="Texture2D" uid="uid://bfeuflvydnmu1" path="res://Assets/background/barriers.png" id="7_eqel2"]
 [ext_resource type="Texture2D" uid="uid://dj13wlttvnvd8" path="res://Assets/storage/LucianStorage.jpg" id="8_i0fjg"]
 [ext_resource type="Texture2D" uid="uid://dnv88vaq8fk8j" path="res://Assets/storage/OJStorage.jpg" id="9_5a13m"]
 [ext_resource type="Texture2D" uid="uid://k7fnm0c66f3a" path="res://Assets/storage/LaurenStorage.jpg" id="10_m78w2"]
+[ext_resource type="Texture2D" uid="uid://d0r2tdaie1qdp" path="res://Assets/background/doorBack.png" id="13_j6vhh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i3nxv"]
 size = Vector2(1177, 20)
@@ -19,17 +25,120 @@ size = Vector2(20, 664)
 
 [node name="archives" type="Node2D"]
 
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_right = 1152.0
-offset_bottom = 232.0
-color = Color(0.210869, 0.10755, 0.0223952, 1)
+[node name="Floors" type="Sprite2D" parent="."]
+position = Vector2(187.5, 454.5)
+scale = Vector2(0.311719, 0.311719)
+texture = ExtResource("1_fp7ht")
 
-[node name="ColorRect2" type="ColorRect" parent="."]
-offset_left = 485.0
-offset_top = 609.0
-offset_right = 650.0
-offset_bottom = 673.0
-color = Color(0.210869, 0.10755, 0.0223952, 1)
+[node name="Floors2" type="Sprite2D" parent="."]
+position = Vector2(586.5, 454.5)
+scale = Vector2(0.311719, 0.311719)
+texture = ExtResource("1_fp7ht")
+
+[node name="Floors3" type="Sprite2D" parent="."]
+position = Vector2(985.5, 454.5)
+scale = Vector2(0.311719, 0.311719)
+texture = ExtResource("1_fp7ht")
+
+[node name="walls" type="Node2D" parent="."]
+
+[node name="Wall" type="Sprite2D" parent="walls"]
+position = Vector2(189.079, 121.563)
+scale = Vector2(0.571088, 0.42237)
+texture = ExtResource("1_lqwkw")
+
+[node name="Wall2" type="Sprite2D" parent="walls"]
+position = Vector2(589.079, 121.563)
+scale = Vector2(0.571088, 0.42237)
+texture = ExtResource("1_lqwkw")
+
+[node name="Wall3" type="Sprite2D" parent="walls"]
+position = Vector2(989.079, 121.563)
+scale = Vector2(0.571088, 0.42237)
+texture = ExtResource("1_lqwkw")
+
+[node name="portraits" type="Node2D" parent="."]
+
+[node name="Portrait" type="Sprite2D" parent="portraits"]
+position = Vector2(127, 88.0001)
+scale = Vector2(0.157031, 0.157031)
+texture = ExtResource("2_evwwu")
+
+[node name="Portrait2" type="Sprite2D" parent="portraits"]
+position = Vector2(415, 88.0001)
+scale = Vector2(0.157031, 0.157031)
+texture = ExtResource("2_evwwu")
+
+[node name="Portrait3" type="Sprite2D" parent="portraits"]
+position = Vector2(719, 88.0001)
+scale = Vector2(0.157031, 0.157031)
+texture = ExtResource("2_evwwu")
+
+[node name="Portrait4" type="Sprite2D" parent="portraits"]
+position = Vector2(983, 88.0001)
+scale = Vector2(0.157031, 0.157031)
+texture = ExtResource("2_evwwu")
+
+[node name="CamiSelfPortrait" type="Sprite2D" parent="portraits"]
+position = Vector2(127, 93)
+scale = Vector2(0.158864, 0.158864)
+texture = ExtResource("3_sa7cy")
+
+[node name="LucianSelfPortrait" type="Sprite2D" parent="portraits"]
+position = Vector2(414.25, 93.9799)
+scale = Vector2(0.0934992, 0.0934992)
+texture = ExtResource("4_tfukp")
+
+[node name="LaurenPortrait" type="Sprite2D" parent="portraits"]
+position = Vector2(983.762, 99.75)
+scale = Vector2(0.107661, 0.107661)
+texture = ExtResource("6_unfvu")
+
+[node name="OjPortrait" type="Sprite2D" parent="portraits"]
+position = Vector2(712.938, 96.9376)
+scale = Vector2(0.109277, 0.109277)
+texture = ExtResource("5_dn1yi")
+
+[node name="Barriers" type="Sprite2D" parent="."]
+position = Vector2(126, 212)
+scale = Vector2(0.551793, 0.551793)
+texture = ExtResource("7_eqel2")
+
+[node name="Barriers2" type="Sprite2D" parent="."]
+position = Vector2(414, 212)
+scale = Vector2(0.551793, 0.551793)
+texture = ExtResource("7_eqel2")
+
+[node name="Barriers3" type="Sprite2D" parent="."]
+position = Vector2(718, 212)
+scale = Vector2(0.551793, 0.551793)
+texture = ExtResource("7_eqel2")
+
+[node name="Barriers4" type="Sprite2D" parent="."]
+position = Vector2(982, 212)
+scale = Vector2(0.551793, 0.551793)
+texture = ExtResource("7_eqel2")
+
+[node name="chests" type="Node2D" parent="."]
+
+[node name="camiStorage" parent="chests" instance=ExtResource("6_tfukp")]
+position = Vector2(122, 271)
+resource = ExtResource("7_dn1yi")
+
+[node name="Storage" parent="chests" instance=ExtResource("6_tfukp")]
+position = Vector2(412, 271)
+resource = ExtResource("8_i0fjg")
+artistName = "Lucian"
+
+[node name="Storage2" parent="chests" instance=ExtResource("6_tfukp")]
+position = Vector2(718, 271)
+resource = ExtResource("9_5a13m")
+artistName = "OJ"
+
+[node name="Storage3" parent="chests" instance=ExtResource("6_tfukp")]
+position = Vector2(978, 271)
+resource = ExtResource("10_m78w2")
+artistName = "Lauren"
 
 [node name="Protag" parent="." instance=ExtResource("1_i3nxv")]
 position = Vector2(576, 539)
@@ -39,7 +148,7 @@ downClamp = 648
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(578.5, 222)
+position = Vector2(578.5, 255)
 shape = SubResource("RectangleShape2D_i3nxv")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
@@ -57,42 +166,7 @@ shape = SubResource("RectangleShape2D_j0ygw")
 [node name="teleportArea" parent="." instance=ExtResource("2_j0ygw")]
 position = Vector2(570, 652)
 
-[node name="CamiSelfPortrait" type="Sprite2D" parent="."]
-position = Vector2(127, 93)
-scale = Vector2(0.158864, 0.158864)
-texture = ExtResource("3_sa7cy")
-
-[node name="LucianSelfPortrait" type="Sprite2D" parent="."]
-position = Vector2(417, 96)
-scale = Vector2(0.100321, 0.100321)
-texture = ExtResource("4_tfukp")
-
-[node name="Oj" type="Sprite2D" parent="."]
-position = Vector2(724, 98)
-scale = Vector2(0.112305, 0.112305)
-texture = ExtResource("5_dn1yi")
-
-[node name="ColorRect3" type="ColorRect" parent="."]
-offset_left = 894.0
-offset_top = 25.0
-offset_right = 1033.0
-offset_bottom = 171.0
-
-[node name="camiStorage" parent="." instance=ExtResource("6_tfukp")]
-position = Vector2(122, 238)
-resource = ExtResource("7_dn1yi")
-
-[node name="Storage" parent="." instance=ExtResource("6_tfukp")]
-position = Vector2(412, 241)
-resource = ExtResource("8_i0fjg")
-artistName = "Lucian"
-
-[node name="Storage2" parent="." instance=ExtResource("6_tfukp")]
-position = Vector2(718, 239)
-resource = ExtResource("9_5a13m")
-artistName = "OJ"
-
-[node name="Storage3" parent="." instance=ExtResource("6_tfukp")]
-position = Vector2(962, 238)
-resource = ExtResource("10_m78w2")
-artistName = "Lauren"
+[node name="DoorBack" type="Sprite2D" parent="."]
+position = Vector2(577, 553)
+scale = Vector2(0.695, 0.695)
+texture = ExtResource("13_j6vhh")

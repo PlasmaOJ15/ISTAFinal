@@ -1,9 +1,15 @@
-[gd_scene load_steps=8 format=3 uid="uid://45cd4c4ufjgx"]
+[gd_scene load_steps=14 format=3 uid="uid://45cd4c4ufjgx"]
 
 [ext_resource type="PackedScene" uid="uid://c3dwy5qviw2jy" path="res://Scenes/protag.tscn" id="1_1m3ku"]
+[ext_resource type="Script" uid="uid://dku5ix0ctinyq" path="res://Scenes/gallery.gd" id="1_c056j"]
+[ext_resource type="Texture2D" uid="uid://csk5w2wycw5ym" path="res://Assets/background/wall.png" id="1_i7ffg"]
+[ext_resource type="Texture2D" uid="uid://b1kxraiqd8e88" path="res://Assets/background/floors.png" id="1_tivr1"]
 [ext_resource type="PackedScene" uid="uid://do2blqkigth53" path="res://Scenes/curator.tscn" id="2_21use"]
 [ext_resource type="PackedScene" uid="uid://boyd67x4sxpvm" path="res://Scenes/teleportArea.tscn" id="3_e6kyq"]
 [ext_resource type="Script" uid="uid://bfugvmetwsjyd" path="res://Scripts/barriers.gd" id="4_c4y5e"]
+[ext_resource type="Texture2D" uid="uid://babep3j048ybn" path="res://Assets/background/door.png" id="6_tivr1"]
+[ext_resource type="Texture2D" uid="uid://bx440lr4ic2ce" path="res://Assets/background/verticalBarracades.png" id="7_vqeo1"]
+[ext_resource type="Texture2D" uid="uid://bl2i5lbhfx82c" path="res://Assets/background/experienceDoor.png" id="9_vqeo1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_21use"]
 size = Vector2(1943, 81)
@@ -15,51 +21,121 @@ size = Vector2(92, 571)
 size = Vector2(76, 447)
 
 [node name="Gallery" type="Node2D"]
+script = ExtResource("1_c056j")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_right = 1779.0
-offset_bottom = 251.0
-color = Color(0.404875, 0.221641, 0.0477395, 1)
+[node name="Floors" type="Sprite2D" parent="."]
+position = Vector2(200, 388)
+scale = Vector2(0.312, 0.312)
+texture = ExtResource("1_tivr1")
+
+[node name="Floors2" type="Sprite2D" parent="."]
+position = Vector2(599, 388)
+scale = Vector2(0.312, 0.312)
+texture = ExtResource("1_tivr1")
+
+[node name="Floors3" type="Sprite2D" parent="."]
+position = Vector2(998, 388)
+scale = Vector2(0.312, 0.312)
+texture = ExtResource("1_tivr1")
+
+[node name="Floors4" type="Sprite2D" parent="."]
+position = Vector2(1397, 388)
+scale = Vector2(0.312, 0.312)
+texture = ExtResource("1_tivr1")
+
+[node name="Floors5" type="Sprite2D" parent="."]
+position = Vector2(1796, 388)
+scale = Vector2(0.312, 0.312)
+texture = ExtResource("1_tivr1")
+
+[node name="Floors6" type="Sprite2D" parent="."]
+position = Vector2(200, 700)
+scale = Vector2(0.312, 0.312)
+texture = ExtResource("1_tivr1")
+
+[node name="Floors7" type="Sprite2D" parent="."]
+position = Vector2(599, 700)
+scale = Vector2(0.312, 0.312)
+texture = ExtResource("1_tivr1")
+
+[node name="Floors8" type="Sprite2D" parent="."]
+position = Vector2(998, 700)
+scale = Vector2(0.312, 0.312)
+texture = ExtResource("1_tivr1")
+
+[node name="Floors9" type="Sprite2D" parent="."]
+position = Vector2(1397, 700)
+scale = Vector2(0.312, 0.312)
+texture = ExtResource("1_tivr1")
+
+[node name="Floors10" type="Sprite2D" parent="."]
+position = Vector2(1796, 700)
+scale = Vector2(0.312, 0.312)
+texture = ExtResource("1_tivr1")
+
+[node name="walls" type="Node2D" parent="."]
+
+[node name="Wall" type="Sprite2D" parent="walls"]
+position = Vector2(189.079, 121.563)
+scale = Vector2(0.571088, 0.42237)
+texture = ExtResource("1_i7ffg")
+
+[node name="Wall2" type="Sprite2D" parent="walls"]
+position = Vector2(589.079, 121.563)
+scale = Vector2(0.571088, 0.42237)
+texture = ExtResource("1_i7ffg")
+
+[node name="Wall3" type="Sprite2D" parent="walls"]
+position = Vector2(989.079, 121.563)
+scale = Vector2(0.571088, 0.42237)
+texture = ExtResource("1_i7ffg")
+
+[node name="Wall4" type="Sprite2D" parent="walls"]
+position = Vector2(1389.08, 121.563)
+scale = Vector2(0.571088, 0.42237)
+texture = ExtResource("1_i7ffg")
+
+[node name="Wall5" type="Sprite2D" parent="walls"]
+position = Vector2(1789.08, 121.563)
+scale = Vector2(0.571088, 0.42237)
+texture = ExtResource("1_i7ffg")
+
+[node name="doors" type="Node2D" parent="."]
+
+[node name="Door" type="Sprite2D" parent="doors"]
+position = Vector2(166, 165)
+scale = Vector2(0.695313, 0.695313)
+texture = ExtResource("6_tivr1")
+
+[node name="Door2" type="Sprite2D" parent="doors"]
+position = Vector2(1078, 165)
+scale = Vector2(0.695313, 0.695313)
+texture = ExtResource("6_tivr1")
+
+[node name="Door3" type="Sprite2D" parent="doors"]
+position = Vector2(1318, 165)
+scale = Vector2(0.695313, 0.695313)
+texture = ExtResource("6_tivr1")
+
+[node name="Door4" type="Sprite2D" parent="doors"]
+position = Vector2(1550, 165)
+scale = Vector2(0.695313, 0.695313)
+texture = ExtResource("6_tivr1")
+
+[node name="ExperienceDoor" type="Sprite2D" parent="doors"]
+position = Vector2(775, 131)
+scale = Vector2(0.204688, 0.204688)
+texture = ExtResource("9_vqeo1")
 
 [node name="ColorRect3" type="ColorRect" parent="."]
 offset_left = 382.0
-offset_top = 34.0
+offset_top = 44.0
 offset_right = 574.0
-offset_bottom = 177.0
+offset_bottom = 187.0
 color = Color(0.187176, 0.187176, 0.187176, 1)
 
-[node name="ColorRect2" type="ColorRect" parent="."]
-offset_left = 667.0
-offset_right = 869.0
-offset_bottom = 253.0
-color = Color(0.0342483, 0, 0.502792, 1)
-
-[node name="ColorRect4" type="ColorRect" parent="."]
-offset_left = 59.0
-offset_right = 261.0
-offset_bottom = 253.0
-color = Color(0.0956109, 0.0572149, 0.00120236, 1)
-
-[node name="ColorRect5" type="ColorRect" parent="."]
-offset_left = 979.0
-offset_right = 1181.0
-offset_bottom = 253.0
-color = Color(0.0956109, 0.0572149, 0.00120236, 1)
-
-[node name="ColorRect6" type="ColorRect" parent="."]
-offset_left = 1219.0
-offset_right = 1421.0
-offset_bottom = 253.0
-color = Color(0.0956109, 0.0572149, 0.00120236, 1)
-
-[node name="ColorRect7" type="ColorRect" parent="."]
-offset_left = 1451.0
-offset_right = 1653.0
-offset_bottom = 253.0
-color = Color(0.0956109, 0.0572149, 0.00120236, 1)
-
 [node name="Curator" parent="." instance=ExtResource("2_21use")]
-position = Vector2(479, 157)
+position = Vector2(479, 167)
 scale = Vector2(0.148317, 0.148317)
 
 [node name="Protag" parent="." instance=ExtResource("1_1m3ku")]
@@ -118,19 +194,15 @@ shape = SubResource("RectangleShape2D_c4y5e")
 position = Vector2(960, 373)
 shape = SubResource("RectangleShape2D_c4y5e")
 
-[node name="ColorRect" type="ColorRect" parent="barriers"]
-offset_left = 299.0
-offset_top = 190.0
-offset_right = 339.0
-offset_bottom = 595.0
-color = Color(0.862465, 0, 0.0655361, 1)
+[node name="VerticalBarracades" type="Sprite2D" parent="barriers"]
+position = Vector2(324, 427)
+scale = Vector2(0.56383, 0.56383)
+texture = ExtResource("7_vqeo1")
 
-[node name="ColorRect2" type="ColorRect" parent="barriers"]
-offset_left = 923.0
-offset_top = 190.0
-offset_right = 963.0
-offset_bottom = 595.0
-color = Color(0.862465, 0, 0.0655361, 1)
+[node name="VerticalBarracades2" type="Sprite2D" parent="barriers"]
+position = Vector2(932, 427)
+scale = Vector2(0.56383, 0.56383)
+texture = ExtResource("7_vqeo1")
 
 [node name="teleportArea" parent="." instance=ExtResource("3_e6kyq")]
 position = Vector2(166, 277)

@@ -4,6 +4,7 @@ extends Node2D
 @onready var canvas_layer: CanvasLayer = $CanvasLayer
 @onready var sprite_2d: TextureRect = $CanvasLayer/Sprite2D
 @onready var label: Label = $Label
+@onready var chest: AnimatedSprite2D = $chest
 
 var canInteract = false
 
@@ -18,9 +19,11 @@ func _process(delta: float) -> void:
 		if sprite_2d.visible:
 			sprite_2d.visible = false
 			Global.playerLocked = false
+			chest.play("closed")
 		else:
 			sprite_2d.visible = true
 			Global.playerLocked = true
+			chest.play("open")
 
 
 func _on_body_exited(body: Node2D) -> void:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cng0368cveh7i"]
+[gd_scene load_steps=12 format=3 uid="uid://cng0368cveh7i"]
 
 [ext_resource type="Script" uid="uid://rx35hc2nflqi" path="res://Scripts/camZoom.gd" id="1_y4m21"]
 [ext_resource type="Texture2D" uid="uid://csr3ny7h5fh7q" path="res://Assets/collagetemp/collages/CamiCollage-1.png" id="2_uvvht"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://rw4f6ud4hb86" path="res://Assets/collagetemp/c58d078a-856c-4aed-9ff9-0bf536e245f2.jpg" id="5_awka6"]
 [ext_resource type="PackedScene" uid="uid://c3dwy5qviw2jy" path="res://Scenes/protag.tscn" id="6_3iwb2"]
 [ext_resource type="PackedScene" uid="uid://boyd67x4sxpvm" path="res://Scenes/teleportArea.tscn" id="6_swiqo"]
+[ext_resource type="Texture2D" uid="uid://d0r2tdaie1qdp" path="res://Assets/background/doorBack.png" id="8_uvvht"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6072g"]
 animations = [{
@@ -81,9 +82,7 @@ shape = SubResource("RectangleShape2D_bkbdv")
 [node name="teleportArea" parent="." instance=ExtResource("6_swiqo")]
 position = Vector2(1754, 2138)
 
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_left = 1676.0
-offset_top = 2114.0
-offset_right = 1835.0
-offset_bottom = 2162.0
-color = Color(0.298129, 0.173676, 0.103864, 1)
+[node name="DoorBack" type="Sprite2D" parent="."]
+position = Vector2(1755, 2066)
+scale = Vector2(0.695, 0.695)
+texture = ExtResource("8_uvvht")

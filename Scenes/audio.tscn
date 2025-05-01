@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://18n0ben4j03l"]
+
+[ext_resource type="AudioStream" uid="uid://dt7ksrhtsfkiy" path="res://Assets/audio/Museum (Hall) - Animal Crossing_ New Leaf.mp3" id="1_l04ps"]
+[ext_resource type="Script" uid="uid://qlk4uvgah55f" path="res://Scripts/audio.gd" id="2_y8l05"]
+[ext_resource type="AudioStream" uid="uid://djd4eex8rwnw4" path="res://Assets/audio/TV Static for 2 minutes (normalized sound).mp3" id="3_c8j57"]
+
+[node name="audio" type="Node"]
+script = ExtResource("2_y8l05")
+
+[node name="music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_l04ps")
+volume_db = -20.0
+autoplay = true
+
+[node name="static" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_c8j57")
+volume_db = -30.0

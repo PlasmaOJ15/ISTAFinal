@@ -3,15 +3,20 @@ extends CharacterBody2D
 # get game objects
 @onready var player_sprite: AnimatedSprite2D = $playerSprite
 @onready var camera: Camera2D = $Camera
+@onready var shadow: Sprite2D = $Camera/CanvasLayer/shadow
+
 @export var leftClamp = 0
 @export var rightClamp = 0
 @export var upClamp = 0
 @export var downClamp = 0
+@export var hasShadow = false
 const SPEED = 250.0
 var can_move = true
 var zoomLevel = 2
 
 func _ready() -> void:
+	if hasShadow:
+		shadow.visible = true
 	camera.limit_left = leftClamp
 	camera.limit_right = rightClamp
 	camera.limit_top = upClamp
