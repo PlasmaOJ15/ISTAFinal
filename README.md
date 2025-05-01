@@ -7,6 +7,9 @@ A Gallery of Homes is the final project for my Computing and the Arts Class
 Credits:
 
 OJ Rodriquez
+
 Lucian Jonatan
+
 Cami Wisneski
+
 Lauren Murphy
