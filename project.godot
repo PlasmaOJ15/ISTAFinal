@@ -23,6 +23,7 @@ Audio="*res://Scenes/audio.tscn"
 [display]
 
 window/size/resizable=false
+window/stretch/mode="viewport"
 
 [input]
 
