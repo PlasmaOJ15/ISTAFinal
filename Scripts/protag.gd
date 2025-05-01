@@ -14,6 +14,7 @@ const SPEED = 250.0
 var can_move = true
 var zoomLevel = 2
 
+# Sets camera limits
 func _ready() -> void:
 	if hasShadow:
 		shadow.visible = true
@@ -22,6 +23,7 @@ func _ready() -> void:
 	camera.limit_top = upClamp
 	camera.limit_bottom = downClamp
 
+# Allow movement when not locked
 func _physics_process(_delta: float) -> void:
 	if Global.playerLocked != true:
 		move_state()
@@ -30,7 +32,8 @@ func _physics_process(_delta: float) -> void:
 	if Input.is_action_just_pressed("DEBUG"):
 		Global.experienced = true
 		get_tree().change_scene_to_file("res://Scenes/gallery.tscn")
-		
+
+# Moves player and sets sprites
 func move_state():
 	var direction_x := Input.get_axis("left", "right")
 	if direction_x:
@@ -58,6 +61,7 @@ func move_state():
 		player_sprite.play('idle')
 	move_and_slide()
 
+# Zoom in the camera
 func zoomIn():
 	if zoomLevel == 2:
 		zoomLevel = 1
@@ -69,6 +73,7 @@ func zoomIn():
 		zoomLevel = 3
 		camera.zoom = Vector2(0.5,0.5)
 
+# Zoom out the camera
 func zoomOut():
 	if zoomLevel == 2:
 		zoomLevel = 3
@@ -80,5 +85,6 @@ func zoomOut():
 		zoomLevel = 4
 		camera.zoom = Vector2(0.3,0.3)
 
+# Disable player movement
 func disable_movement(boolean):
 	can_move = boolean

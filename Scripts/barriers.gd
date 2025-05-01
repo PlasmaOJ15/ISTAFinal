@@ -1,7 +1,6 @@
 extends StaticBody2D
 
-
-# Called when the node enters the scene tree for the first time.
+#If you have seen the experience, delete the barriers
 func _ready() -> void:
 	if Global.experienced:
 		queue_free()

@@ -1,11 +1,6 @@
 extends Node2D
 
-
 # Called when the node enters the scene tree for the first time.
+# Ensures that museum music plays in museum
 func _ready() -> void:
 	Audio.changeAudio("music")
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass

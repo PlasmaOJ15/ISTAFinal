@@ -16,7 +16,7 @@ var currCollage = 1
 
 var rng = RandomNumberGenerator.new()
 
-# Called when the node enters the scene tree for the first time.
+# Sets background to random collages and starts timers
 func _ready() -> void:
 	Audio.changeAudio("static")
 	rng.randomize()
@@ -28,12 +28,7 @@ func _ready() -> void:
 	switch_timer.start()
 	flicker_time.start()
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
-
+# When time to switch background, teleport the player and restart timer
 func _on_switch_timer_timeout() -> void:
 	switch_timer.wait_time = rng.randi_range(10,20)
 	flicker_time.wait_time = switch_timer.wait_time - 2
@@ -44,6 +39,7 @@ func _on_switch_timer_timeout() -> void:
 	switch_timer.start()
 	flicker_time.start()
 
+# Set the collage to a random new collage
 func changeCollage():
 	if currCollage == 1:
 		currCollage = rng.randi_range(2,3)
@@ -56,7 +52,8 @@ func changeCollage():
 		currCollage = rng.randi_range(1,2)
 	#print(currCollage)
 	collages.play(str(currCollage))
-	
+
+# Flicker a black texture over the screen
 func _on_flicker_time_timeout() -> void:
 	if canFlicker:
 		if flickerCount <= 4:
@@ -67,9 +64,11 @@ func _on_flicker_time_timeout() -> void:
 			flicker.visible = !flicker.visible
 			flickerCount = 0
 
+# Time between flickers
 func _on_short_timer_timeout() -> void:
 	_on_flicker_time_timeout()
-	
+
+# When the experience is over, set the background to space
 func _on_experience_end_timeout() -> void:
 	Global.experienced = true
 	final_blackout.visible = true
@@ -77,6 +76,6 @@ func _on_experience_end_timeout() -> void:
 	flicker.visible = false
 	leave_timer.start();
 
-
+# Teleport player to gallery
 func _on_leave_timer_timeout() -> void:
 	get_tree().change_scene_to_file("res://Scenes/gallery.tscn")

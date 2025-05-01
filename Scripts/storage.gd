@@ -8,12 +8,12 @@ extends Node2D
 
 var canInteract = false
 
-# Called when the node enters the scene tree for the first time.
+# Sets image and name from input
 func _ready() -> void:
 	sprite_2d.texture = resource
 	label.text = "View " + artistName + "'s Images?"
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+# If the player interacts with the chest, open it and view image
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("interact") and canInteract:
 		if sprite_2d.visible:
@@ -25,12 +25,13 @@ func _process(delta: float) -> void:
 			Global.playerLocked = true
 			chest.play("open")
 
-
+# When player leaves chest
 func _on_body_exited(body: Node2D) -> void:
 	if body.name == "Protag":
 		canInteract = false
 		label.visible = false
 
+# When player is near chest
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "Protag":
 		canInteract = true
